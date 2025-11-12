@@ -128,7 +128,6 @@ def main() -> None:
     args = parse_args()
     result = asyncio.run(run_agent(args.role, args.query, args.server_url))
     output = result.get("output") or result
-    print("\n=== Gemini Response ===")
     print(output)
 
 
