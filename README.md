@@ -5,7 +5,7 @@ FastMCP server + Gemini 2.0 Flash LangChain client showcasing RBAC-protected pat
 ## Prerequisites
 
 * Python 3.11+
-* `GOOGLE_API_KEY` for Gemini 2.0 Flash (already referenced inside `.env`)
+* GOOGLE_API_KEY for Gemini 2.0 Flash (already referenced inside `.env`)
 
 Install dependencies:
 
@@ -15,13 +15,17 @@ pip install -r requirements.txt
 
 ## Environment Variables
 
-`.env` ships with sample values:
+.env ships with sample values:
 
-* `JWT_SECRET` – symmetric key used to validate tokens.
-* `DB_URL` – path to the SQLite file (`sqlite:///app.db` by default).
-* `MCP_SERVER_SSE_URL` – SSE endpoint exposed by FastMCP (`http://127.0.0.1:8000/sse`).
-* `GOOGLE_API_KEY` – Gemini credential (replace with a valid key).
-* `JWT_*` – pre-generated tokens scoped to Doctor, Nurse, LabTechnician, and Admin roles.
+ JWT_SECRET – symmetric key used to validate tokens.
+ 
+ DB_URL – path to the SQLite file (`sqlite:///app.db` by default).
+ 
+ MCP_SERVER_SSE_URL – SSE endpoint exposed by FastMCP (`http://127.0.0.1:8000/sse`).
+ 
+ GOOGLE_API_KEY – Gemini credential (replace with a valid key).
+ 
+ JWT_* – pre-generated tokens scoped to Doctor, Nurse, LabTechnician, and Admin roles.
 
 Update secrets before using in a real setting.
 
