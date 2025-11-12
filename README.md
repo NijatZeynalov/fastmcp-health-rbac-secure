@@ -2,22 +2,10 @@
 
 FastMCP server + Gemini 2.0 Flash LangChain client showcasing RBAC-protected patient data tools backed by SQLite + JWT.
 
-## Project Layout
-
-```
-project/
-├── server.py             # FastMCP server exposing RBAC-aware tools
-├── langchain_client.py   # Gemini 2.0 Flash client wired through langchain_mcp_adapters
-├── app.db                # Created automatically on first server start
-├── .env                  # Secrets, DB URL, and JWT samples
-└── requirements.txt      # Python dependencies
-```
-
 ## Prerequisites
 
 * Python 3.11+
 * `GOOGLE_API_KEY` for Gemini 2.0 Flash (already referenced inside `.env`)
-* Optional: virtualenv (`python -m venv .venv && .venv\Scripts\activate`)
 
 Install dependencies:
 
@@ -71,9 +59,3 @@ Flags:
 | AdminStaff     | `ScheduleAppointment`, `BillingInfoView`                              |
 
 Every write tool automatically records an audit entry in the `audit_log` table (`who`, `what`, `when`, payload).
-
-## Useful Tips
-
-* `server.py --issue-token` helps regenerate JWTs whenever you update `JWT_SECRET`.
-* The SQLite file lives at the path resolved from `DB_URL`. Delete it to reseed demo data.
-* Use `python server.py --transport http` if you prefer REST-style access; update `MCP_SERVER_SSE_URL` accordingly (e.g., `http://127.0.0.1:8000/sse`). 
