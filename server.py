@@ -89,7 +89,7 @@ def get_connection() -> sqlite3.Connection:
 def _hash_password(raw_password: str) -> str:
     return hashlib.sha256(raw_password.encode("utf-8")).hexdigest()
 
-
+# use only once
 def init_db() -> None:
     statements = [
         """
