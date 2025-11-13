@@ -737,7 +737,7 @@ def main() -> None:
 
     server.run(transport=args.transport, **transport_kwargs)
 
-
+#once
 init_db()
 seed_data()
 
